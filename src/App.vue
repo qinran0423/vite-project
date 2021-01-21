@@ -1,10 +1,19 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <HelloWorld msg="Hello Vue 3 + Vite"  @myclick="onmyClick" ref="hw"/>
 </template>
 
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from 'comps/HelloWorld.vue'
+import { ref } from 'vue';
+
+const hw = ref(null)
+
+const onmyClick = () => {
+  console.log('click');
+  hw.value.someMethod()
+}
+
 </script>
 
 <style>
